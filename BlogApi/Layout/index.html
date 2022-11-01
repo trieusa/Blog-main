@@ -4,6 +4,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <title>jQuery getJSON() Method</title>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+      
+    <!-- Script to get JSON file and display its content -->
+    <script type="text/javascript" language="javascript">
+      $(document).ready(function() {
+    $("#fetch").click(function(event) {
+        $.getJSON("http://localhost:5101/api/user", function(emp) {
+            for(var i=0;i<emp.length;i++){
+                $('#display').html('<p> id: ' + emp[i].id + '</p>');
+                $('#display').append('<p> displayName : ' + emp[i].displayName + '</p>');
+                $('#display').append('<p> email: ' + emp[i].email + '</p>');
+                $('#display').append('<p> phone: ' + emp[i].phone + '</p>');
+                $('#display').append('<p> dateOfBirth: ' + emp[i].dateOfBirth + '</p>');
+               }
+           
+        });
+    });
+});
+    </script>
 </head>
 <style>
     ul {
@@ -31,31 +53,34 @@
     }
     </style>
 <body>
-    <h2>"Danh mục người dùng";</h2>
+    
     <div >
         <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="Edit.html">Edit</a></li>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="Edit.html">User</a></li>
             <li><a href="#contact">Thêm</a></li>
             <li><a href="#about">About</a></li>
           </ul>
     </div>  
+    <h2>"Danh mục người dùng";</h2>
     <p class="alert-danger"></p>
     <p class="alert-success"></p>
     <p class="text-right"></p>
     <table class="table" style="border: 1px solid #d9d9d9">
         <tr>
-            <th rowspan="2" style="vertical-align: middle">Họ tên</th>
-            <th rowspan="2" style="vertical-align: middle">Tên đăng nhập</th>
-            <th rowspan="2" class="text-center" style="vertical-align: middle">Quyền hệ thống</th>
-            <th colspan="3" class="text-center">Cho phép thao tác dữ liệu</th>
+            <th rowspan="2" style="vertical-align: middle">displayName</th>
+            <th rowspan="2" style="vertical-align: middle">email</th>
+            <th rowspan="2" class="text-center" style="vertical-align: middle">phone</th>
+            <th colspan="3" class="text-center">dateOfBirth</th>
             <th rowspan="2"></th>
+            
         </tr>
         <tr>
             <th class="text-center">Thêm</th>
             <th class="text-center">Sửa</th>
             <th class="text-center">Xóa</th>
         </tr>
+       
      
         {
             <tr>
