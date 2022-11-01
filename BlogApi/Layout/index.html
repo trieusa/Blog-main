@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>"Danh mục người dùng";</h2>
+    <p class="alert-danger"></p>
+    <p class="alert-success"></p>
+    <p class="text-right"></p>
+    <table class="table" style="border: 1px solid #d9d9d9">
+        <tr>
+            <th rowspan="2" style="vertical-align: middle">Họ tên</th>
+            <th rowspan="2" style="vertical-align: middle">Tên đăng nhập</th>
+            <th rowspan="2" class="text-center" style="vertical-align: middle">Quyền hệ thống</th>
+            <th colspan="3" class="text-center">Cho phép thao tác dữ liệu</th>
+            <th rowspan="2"></th>
+        </tr>
+        <tr>
+            <th class="text-center">Thêm</th>
+            <th class="text-center">Sửa</th>
+            <th class="text-center">Xóa</th>
+        </tr>
+     
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.UserName</td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center">
+               
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
